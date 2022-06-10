@@ -17,7 +17,18 @@ $ pip install -r requirements.txt
 ```
 $ uvicorn main:app --host=127.0.0.1 --port=5000
 ```
-- Dockerized
+
+## Docs
+Access the address
+
+http://localhost:5000/docs
+
+or
+
+http://localhost:5000/redoc
+
+
+## Dockerized
 ```
 $ docker build --tag fast-ml-server .
 $ docker run fast-ml-server:latest
