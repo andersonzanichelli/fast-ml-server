@@ -1,4 +1,4 @@
-from model_runner import ModelRunner
+from src.model_runner import ModelRunner
 
 class Service:
 

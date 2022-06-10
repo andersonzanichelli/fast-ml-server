@@ -1,12 +1,12 @@
 import logging
 from fastapi import FastAPI
 
-from iris import Iris
-from service import Service
+from src.iris import Iris
+from src.service import Service
 
 app = FastAPI()
 
-logging.config.fileConfig('logging.conf', disable_existing_loggers=False)
+logging.config.fileConfig('src/logging.conf', disable_existing_loggers=False)
 logger = logging.getLogger(__name__)
 
 species = { 0: "Iris setosa", 1: "Iris versicolor", 2: "Iris virginica" }
@@ -15,7 +15,7 @@ species = { 0: "Iris setosa", 1: "Iris versicolor", 2: "Iris virginica" }
 def predict(iris: Iris):
     logger.info(f'Receive the iris request {iris}')
 
-    model = "iris.knn.model"
+    model = "src/iris.knn.model"
     result = Service(model).execute(iris)
 
     resp = {

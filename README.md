@@ -31,7 +31,7 @@ http://localhost:5000/openapi.json
 ## Dockerized
 ```
 $ docker build --tag fast-ml-server .
-$ docker run fast-ml-server:latest
+$ docker run -p 5000:5000 fast-ml-server:latest
 ```
 
 ## Utility Commands
