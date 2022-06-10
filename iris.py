@@ -1,12 +1,11 @@
+from pydantic import BaseModel
 import numpy as np
 
-class Iris:
-
-    def __init__(self, sepal_length, sepal_width, petal_length, petal_width):
-        self.sepal_length = sepal_length
-        self.sepal_width = sepal_width 
-        self.petal_length = petal_length
-        self.petal_width = petal_width 
+class Iris(BaseModel):
+    sepal_length: float
+    sepal_width: float
+    petal_length: float
+    petal_width: float
 
     def get_np_attr(self):
         return np.array([[

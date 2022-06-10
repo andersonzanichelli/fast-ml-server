@@ -19,13 +19,13 @@ $ uvicorn main:app --host=127.0.0.1 --port=5000
 ```
 
 ## Docs
-Access the address
+Api docs automatically generated
 
 http://localhost:5000/docs
 
-or
-
 http://localhost:5000/redoc
+
+http://localhost:5000/openapi.json
 
 
 ## Dockerized
