@@ -6,4 +6,7 @@ class Service:
         self.model = model_filename
 
     def execute(self, iris):
-        return ModelRunner(self.model).run(iris)
+        return ModelRunner().run(iris)
+
+    def square(self, value):
+        return ModelRunner().square(value)

@@ -57,6 +57,19 @@ def predict(iris: Iris, token: str = Depends(oauth2_scheme)):
 
     return resp
 
+@app.post("/square/")
+def predict(value: str, token: str = Depends(oauth2_scheme)):
+    logger.info(f'Receive the value request {value}')
+
+    model = "src/iris.knn.model"
+    result = Service(model).square(int(value))
+
+    resp = {
+            "squared": str(result)
+            }
+
+    return resp
+
 @app.post("/token", response_model=Token)
 async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
     user = authenticate_user(fake_users_db, form_data.username, form_data.password)

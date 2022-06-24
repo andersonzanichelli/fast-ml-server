@@ -13,6 +13,7 @@ RUN mkdir src
 
 COPY main.py .
 COPY src ./src
+RUN pip install irismodellib-0.1.7-py3-none-any.whl
 
 CMD [ "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000" ]
 
